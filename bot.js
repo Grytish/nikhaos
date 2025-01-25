@@ -1,47 +1,44 @@
-require("dotenv").config();
-require("module-alias/register");
+// Підключення основних модулів та залежностей
+require("dotenv").config(); // Завантаження змінних оточення
+require("module-alias/register"); // Підтримка alias-шляхів
 
-// register extenders
-require("@helpers/extenders/Message");
-require("@helpers/extenders/Guild");
-require("@helpers/extenders/GuildChannel");
+// Реєстрація розширень функціоналу
+require("@helpers/extenders/Message"); // Розширення для роботи з повідомленнями
+require("@helpers/extenders/Guild"); // Розширення для роботи з гільдіями
+require("@helpers/extenders/GuildChannel"); // Розширення для роботи з каналами
 
-const { checkForUpdates } = require("@helpers/BotUtils");
-const { initializeMongoose } = require("@src/database/mongoose");
-const { BotClient } = require("@src/structures");
-const { validateConfiguration } = require("@helpers/Validator");
+const { checkForUpdates } = require("@helpers/BotUtils"); // Функція перевірки оновлень
+const { BotClient } = require("@src/structures"); // Основний клас клієнта Discord
+const { validateConfiguration } = require("@helpers/Validator"); // Функція перевірки конфігурації
 
-validateConfiguration();
+validateConfiguration(); // Перевірка конфігурації перед запуском
 
-// initialize client
+// Ініціалізація клієнта
 const client = new BotClient();
-client.loadCommands("src/commands");
-client.loadContexts("src/contexts");
-client.loadEvents("src/events");
+client.loadCommands("src/commands"); // Завантаження команд
+client.loadContexts("src/contexts"); // Завантаження контекстних команд
+client.loadEvents("src/events"); // Завантаження подій
 
-// find unhandled promise rejections
+// Обробка необроблених обіцянок (promise rejections)
 process.on("unhandledRejection", (err) => client.logger.error(`Unhandled exception`, err));
 
 (async () => {
-  // check for updates
+  // Перевірка наявності оновлень
   await checkForUpdates();
 
-  // start the dashboard
+  // Запуск панелі управління (якщо ввімкнено)
   if (client.config.DASHBOARD.enabled) {
     client.logger.log("Launching dashboard");
     try {
       const { launch } = require("@root/dashboard/app");
 
-      // let the dashboard initialize the database
+      // Ініціалізація панелі (без бази даних)
       await launch(client);
     } catch (ex) {
       client.logger.error("Failed to launch dashboard", ex);
     }
-  } else {
-    // initialize the database
-    await initializeMongoose();
   }
 
-  // start the client
-  await client.login(process.env.BOT_TOKEN);
+  // Запуск клієнта Discord
+  await client.login(process.env.BOT_TOKEN); // Логін через токен бота
 })();
