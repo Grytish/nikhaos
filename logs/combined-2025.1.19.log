@@ -1,0 +1,53 @@
+{"level":30,"time":1737323318044,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Validating config file and environment variables"}
+{"level":40,"time":1737323318046,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"env: SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET are missing. Spotify music links won't work"}
+{"level":40,"time":1737323318047,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1737323318047,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1737323319321,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Loading commands..."}
+{"level":50,"time":1737323320755,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Failed to load C:\\Users\\yaruk\\OneDrive\\Desktop\\Nikhao Ru\\src\\commands\\fun\\meme.js Reason: Cannot find module 'axios'\nRequire stack:\n- C:\\Users\\yaruk\\OneDrive\\Desktop\\Nikhao Ru\\src\\commands\\fun\\meme.js\n- C:\\Users\\yaruk\\OneDrive\\Desktop\\Nikhao Ru\\src\\structures\\BotClient.js\n- C:\\Users\\yaruk\\OneDrive\\Desktop\\Nikhao Ru\\src\\structures\\index.js\n- C:\\Users\\yaruk\\OneDrive\\Desktop\\Nikhao Ru\\bot.js"}
+{"level":20,"time":1737323328312,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1737323328315,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1737323328319,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1737323328324,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1737323328328,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1737323328713,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1737323328715,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1737323328719,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1737323328723,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1737323328726,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1737323328759,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1737323328762,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":20,"time":1737323328767,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command move. Disabled!"}
+{"level":20,"time":1737323328769,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1737323328771,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1737323328772,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command purgebots. Disabled!"}
+{"level":20,"time":1737323328774,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1737323328776,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1737323328778,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command purgeuser. Disabled!"}
+{"level":20,"time":1737323328781,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1737323328785,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1737323328788,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":20,"time":1737323328794,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping command purge. Disabled!"}
+{"level":20,"time":1737323328798,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping command voice. Disabled!"}
+{"level":50,"time":1737323328866,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Failed to load C:\\Users\\yaruk\\OneDrive\\Desktop\\Nikhao Ru\\src\\commands\\music\\play.js Reason: Cannot read properties of undefined (reading 'escapeMarkdown')"}
+{"level":20,"time":1737323328885,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1737323328887,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1737323328893,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Skipping slash command listservers. Disabled!"}
+{"level":30,"time":1737323329054,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Loaded 102 commands"}
+{"level":30,"time":1737323329054,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Loaded 83 slash commands"}
+{"level":30,"time":1737323329054,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Loading contexts..."}
+{"level":30,"time":1737323329057,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Loaded 1 USER contexts"}
+{"level":30,"time":1737323329057,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1737323329057,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Loading events..."}
+{"level":30,"time":1737323329149,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1737323329650,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"VersionCheck: Your discord bot is up to date"}
+{"level":30,"time":1737323329650,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Connecting to MongoDb..."}
+{"level":30,"time":1737323330868,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Mongoose: Database connection established"}
+{"level":30,"time":1737323332063,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Logged in as Nikhao#9229! (1302268694902210661)"}
+{"level":20,"time":1737323332063,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Node \"Local Node\" debug: connection: creating websocket..."}
+{"level":30,"time":1737323332064,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Music Manager initialized"}
+{"level":30,"time":1737323332064,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Initializing giveaways manager..."}
+{"level":50,"time":1737323332075,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","err":{"type":"Error","message":"Error: connect ECONNREFUSED ::1:2333","stack":"Error: Error: connect ECONNREFUSED ::1:2333\n    at Connection._onerror (C:\\Users\\yaruk\\OneDrive\\Desktop\\Nikhao Ru\\node_modules\\lavaclient\\dist\\lib\\node\\Connection.js:145:33)\n    at callListener (C:\\Users\\yaruk\\OneDrive\\Desktop\\Nikhao Ru\\node_modules\\ws\\lib\\event-target.js:290:14)\n    at WebSocket.onError (C:\\Users\\yaruk\\OneDrive\\Desktop\\Nikhao Ru\\node_modules\\ws\\lib\\event-target.js:230:9)\n    at WebSocket.emit (node:events:517:28)\n    at emitErrorAndClose (C:\\Users\\yaruk\\OneDrive\\Desktop\\Nikhao Ru\\node_modules\\ws\\lib\\websocket.js:1041:13)\n    at ClientRequest.<anonymous> (C:\\Users\\yaruk\\OneDrive\\Desktop\\Nikhao Ru\\node_modules\\ws\\lib\\websocket.js:881:5)\n    at ClientRequest.emit (node:events:517:28)\n    at Socket.socketErrorListener (node:_http_client:501:9)\n    at Socket.emit (node:events:517:28)\n    at emitErrorNT (node:internal/streams/destroy:151:8)"},"msg":"Node \"Local Node\" encountered an error: Error: connect ECONNREFUSED ::1:2333.: Error: connect ECONNREFUSED ::1:2333"}
+{"level":30,"time":1737323332077,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Node \"Local Node\" disconnected"}
+{"level":20,"time":1737323332077,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Node \"Local Node\" debug: connection: unable to reconnect"}
+{"level":30,"time":1737323332186,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Giveaway Manager initialized"}
+{"level":30,"time":1737323333190,"pid":19976,"hostname":"LAPTOP-PD0JMHRC","msg":"Successfully registered interactions"}

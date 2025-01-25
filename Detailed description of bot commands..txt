@@ -1,0 +1,518 @@
+11:33 01.01.2025
+# ⚙ Admin
+
+{% hint style="danger" %}
+These commands can only be used by members who have **MANAGE_SERVER** permission
+{% endhint %}
+
+### Set Prefix
+
+- **Description**: Set bot prefix
+- **Usage**: `!setprefix <newPrefix>`
+
+### Embed
+
+- **Description**: Send an embed message
+- **Usage**: `!embed <#channel>`
+
+### Automoderation
+
+{% hint style="info" %}
+By default, Auto moderation events are ignored for members who have the following permissions since they are assumed to be channel/server moderators
+
+**KICK_MEMBERS**, **BAN_MEMBERS**, **MANAGE_GUILD**, **MANAGE_MESSAGES**
+
+`!automodconfig debug on` disables this
+{% endhint %}
+
+|                                                                                                                                              |
+| ----------------------------------------------  | -------------------------------------------------------------- |
+| **!automodconfig status**                       | view configuration status                                      |
+| **!automodconfig strikes \<amount>**            | set the maximum number of strikes before taking an action      |
+| **!automodconfig action \<timeout\|mute\|ban>** | set the action to be performed after receiving maximum strikes |
+| **!automodconfig debug \<on\|off>**             | turns on automod for messages sent by admins and moderators    |
+| **!automodconfig whitelist**                    | list of channels that are whitelisted                          |
+| **!automodconfig whitelistadd \<channel>**      | add a channel to the whitelist                                 |
+| **!automodconfig whitelistremove \<channel>**   | remove a channel from the whitelist                            |
+
+**Settings**
+
+| Name                                          | Description                                                                 |
+| --------------------------------------------- | --------------------------------------------------------------------------- |
+| **!anti ghostping \<on\|off>**                | logs ghost mentions in your server (Requires `/modlog` channel to be setup) |
+| **!anti spam \<on\|off>**                     | enable or disable antispam detection                                        |
+| **!anti massmention \<on\|off> \[threshold]** | enable or disable massmention detection (default threshold is 3 mentions]   |
+
+**Autodelete**
+
+| Name                                   | Description                                                                 |
+| -------------------------------------- | --------------------------------------------------------------------------- |
+| **!autodelete attachments \<on\|off>** | logs ghost mentions in your server (Requires `/modlog` channel to be setup) |
+| **!autodelete invites \<on\|off>**     | allow or disallow sending discord invites in message                        |
+| **!automod links \<on\|off>**          | allow or disallow sending links in message                                  |
+| **!automod maxlines \<amount>**        | sets maximum lines allowed per message                                      |
+
+{% hint style="warning" %}
+Each time a member tries to break the automated rule, he/she **receives a strike**. After receiving the maximum number of strikes (default 10), the moderation action (default TIMEOUT) is performed on them
+{% endhint %}
+
+### Channels Counters
+
+- **Description:** setup counter channel in the guild
+- **Usage**: `!counter <counter_type> <name>`
+- **Available counters** **types**
+  - USERS: counts the total server member count (members + bots)
+  - MEMBERS: counts the total member count
+  - BOTS: counts the total number of bots
+
+### Warnings
+
+- **!maxwarn limit \<amount>**: set max warnings a member can receive before taking an action
+- **!maxwarn action \<timeout\|kick\|ban>**: set the action to be performed after receiving maximum warnings
+
+### Moderation Logging
+
+- **Description**: enable or disable moderation logs
+- **Usage**: `!modlog <channel|off>`
+
+{% hint style="info" %}
+Moderation logging enable logging of all **moderation actions** and **automod events**
+{% endhint %}
+
+### Flag Translations
+
+_Enabling this feature will allow members to simply react to any message with a country flag emoji, translating that message content to regional language_
+
+- **Description**: configure flag translation in the server
+- **Usage**: `!flagtr <on|off>`
+
+![](../.gitbook/assets/image.png)
+
+### Auto Role
+
+- **Description**: setup role to be given when a member joins the server
+- **Usage**: `!autorole <role|off>`
+
+### Greeting
+
+{% tabs %}
+{% tab title="Welcome" %}
+**!welcome status \<on\|off>**
+
+- enable or disable welcome message
+
+**!welcome channel \<#channel>**
+
+- configure channel where welcome messages must be sent
+
+**!welcome preview**
+
+- send a welcome preview
+
+**!welcome desc \<content>**
+
+- set welcome embed description
+
+**!welcome footer \<content>**
+
+- set welcome embed footer
+
+**!welcome thumbnail \<on\|off>**
+
+- enable or disable welcome message thumbnail
+
+**!welcome color \<#hex>**
+
+- set welcome embed color
+
+**!welcome image \<image-url>**
+
+- set welcome embed image
+  {% endtab %}
+
+{% tab title="Farewell" %}
+**!farewell status \<on\|off>**
+
+- enable or disable farewell message
+
+**!farewell channel \<#channel>**
+
+- configure channel where farewell messages must be sent
+
+**!farewell preview**
+
+- send a farewell preview
+
+**!farewell desc \<content>**
+
+- set farewell embed description
+
+**!farewell footer \<content>**
+
+- set farewell embed footer
+
+**!farewell thumbnail \<on\|off>**
+
+- enable or disable farewell message thumbnail
+
+**!farewell color \<#hex>**
+
+- set farewell embed color
+
+**!farewell image \<#image-url>**
+
+- set farewell embed image
+  {% endtab %}
+  {% endtabs %}
+
+{% hint style="success" %}
+
+#### Allowed Content Replacements
+
+- \n : New Line&#x20;
+- {server} : Server Name&#x20;
+- {count} : Server member count&#x20;
+- {member:nick} : Member Nickname&#x20;
+- {member:name} : Member Name&#x20;
+- {member:dis} : Member Discriminator&#x20;
+- {member:tag} : Member Tag&#x20;
+- {member:mention} : Member Mention&#x20;
+- {member:avatar} : Member Avatar URL&#x20;
+- {inviter:name} : Inviter Name&#x20;
+- {inviter:tag} : Inviter Tag&#x20;
+- {invites} : Inviter Invites
+  {% endhint %}
+
+### Reaction Roles
+
+**Create Reaction Role**
+
+- **Usage**: `!addrr <#channel> <messageId> <role> <emote>`
+- **Description**: setup reaction role for the specified message
+
+**Remove Reaction Roles**
+
+- **Usage**: `!removerr <#channel> <messageId>`
+- **Description**: remove configured reaction for the specified message
+
+### Ticketing
+
+**Configuration**
+
+- **!ticket setup \<#channel>**: setup a new ticket message
+- **!ticket log \<#channel>**: setup log channel for tickets
+- **!ticket limit \<amount>**: set maximum number of concurrent open tickets
+- **!ticket closeall**: close all open tickets
+
+**Ticket Channel Commands**
+
+- **!ticket close**: close the ticket
+- **!ticket add \<userId\|roleId>**: add user/role to the ticket
+- **!ticket remove \<userId\|roleId>**: remove user/role from the ticket
+
+**Ticket Category Commands**
+
+- **!ticketcat list**: list all ticket categories
+- **!ticketcat add \<category> \| \<name>**: create a new ticket category
+- **!ticketcat remove \<category>**: remove a ticket category
+_____________________________________________________________________________________________________________________________
+---
+description: 10 commands
+---
+
+# 🔞 Anime
+
+### Reactions
+
+- **Description**: anime reactions
+- **Command Usage**: `!anime <reaction>`
+- **Slash Usage**: `/anime`
+- **Cooldown**: 5 seconds
+
+|      |    |       |
+| hug  |kiss|cuddle |
+| feed |pat |poke   |
+| slap |smug|tickle |
+| wink |    |       |
+
+_____________________________________________________________________________________________________________________________
+---
+description: 7 commands
+---
+
+# 😂 Fun
+
+| Command                | Slash          | Description                 |
+| ---------------------- | -------------- | --------------------------- |
+| **!animal \<type>**    | **/animal**    | shows a random animal image |
+| **!facts \<animal>**   | **/facts**     | get a random animal facts   |
+| **!flip coin**         | **/flip coin** | flip a coin                 |
+| **!flip text \<text>** | **/flip text** | reverses the given message  |
+| **!snake**             | **/snake**     | start a snake game          |
+| **!meme \[category]**  | **/meme**      | get a random meme           |
+| **!together \[game]**  | **/together**  | discord together            |
+
+{% hint style="success" %}
+
+#### Available games:
+
+```
+askaway, awkword, betrayal, bobble, checkers, chess, chessdev, doodlecrew, fishing, land, lettertile, meme, ocho, poker, puttparty, puttpartyqa, sketchheads, sketchyartist, spellcast, wordsnack, youtube, youtubedev
+```
+
+{% endhint %}
+_____________________________________________________________________________________________________________________________
+---
+description: 7 commands
+---
+
+# 🎉 Giveaways
+
+| Command / Slash                   | Description              |
+| --------------------------------- | ------------------------ |
+| **!giveaway start \<#channel>**   | setup a new giveaway     |
+| **!giveaway pause \<messageId>**  | pause a giveaway         |
+| **!giveaway resume \<messageId>** | resume a paused giveaway |
+| **!giveaway end \<messageId>**    | end a giveaway           |
+| **!giveaway reroll \<messageId>** | reroll a giveaway        |
+| **!giveaway list \<messageId>**   | list all giveaways       |
+| **!giveaway edit \<messageId>**   | edit a giveaway          |
+_____________________________________________________________________________________________________________________________
+---
+description: 32 commands
+---
+
+# 🖼 Image
+
+### Filters
+
+- **Description**: add filter to the provided image
+- **Command Usage**: `!{available filters}`
+- **Slash Usage**: `/filter <name>`;
+- **Cooldown**: 5 seconds
+- **Available Filters**:
+
+|         |           |           |          |
+| ------- | --------- | --------- | -------- |
+| blur    | brighten  | burn      | darken   |
+| distort | greyscale | invert    | pixelate |
+| sepia   | sharpen   | threshold |          |
+
+### Overlays
+
+- **Description**: add overlay over the provided image
+- **Command Usage**: `!{available overlays}`
+- **Slash Usage**: `/overlay <name>`;
+- **Cooldown**: 5 seconds
+- **Available Filters**:
+
+|          |          |                 |           |
+| -------- | -------- | --------------- | --------- |
+| approved | brazzers | gay             | halloween |
+| rejected | thuglife | to-be-continued | wasted    |
+
+### Generators
+
+- **Description**: image meme generator
+- **Command Usage**: `!{available generator}`
+- **Slash Usage**: `/generator <name>`;
+- **Cooldown**: 5 seconds
+- **Available Generators**:
+
+|        |               |              |          |
+| ------ | ------------- | ------------ | -------- |
+| ad     | affect        | beautiful    | bobross  |
+| color  | confusedstonk | delete       | facepalm |
+| hitler | jail          | jokeoverhead | karaba   |
+| mms    | notstonk      | poutine      | rainbow  |
+| rip    | shit          | stonk        | tatoo    |
+| thomas | trash         | wanted       | wasted   |
+
+{% hint style="info" %}
+
+### Command Usage
+
+You can use image commands in the following formats
+
+- cmd : Picks message author as image
+- cmd [member|ID] : Picks mentioned members avatar as image
+- cmd [url] : Picks image from provided URL
+- cmd [attachment] : Picks attachment image
+  {% endhint %}
+
+{% hint style="info" %}
+
+### Slash Optional Arguments
+
+The above image commands use the command author's avatar by default. However, the following optional argument
+
+- user : Picks mentioned members avatar as image
+- link : Picks image from provided URL
+  {% endhint %}
+_____________________________________________________________________________________________________________________________
+---
+description: 11 commands
+---
+
+# 🪧 Information
+
+| Command                    | Slash             | Description                                                |
+| -------------------------- | ----------------- | ---------------------------------------------------------- |
+| **!botinvite**             | **/bot invite**   | get bot's invite                                           |
+| **!botstats**              | **/bot stats**    | get bot's statistics                                       |
+| **!uptime**                | **/bot uptime**   | get bot's uptime                                           |
+| **!userinfo \[member]**    | **/info user**    | get user information                                       |
+| **!chinfo \[channel]**     | **/info channel** | get channel information                                    |
+| **!guildinfo**             | **/info guild**   | get guild information                                      |
+| **!botinfo**               | **/info bot**     | get bot information                                        |
+| **!avatar \[member]**      | **/info avatar**  | displays avatar information                                |
+| **!emojinfo \[emoji]**     | **/info emoji**   | displays emoji information                                 |
+| **!lb \<xp\|invite\|rep>** | **/lb**           | display the XP leaderboard                                 |
+| **!ping**                  | **/ping**         | shows the current ping from the bot to the discord servers |
+_____________________________________________________________________________________________________________________________
+---
+description: 10 commands
+---
+
+# 📨 Invites
+
+| Command                               | Slash                 | Description                                                 |
+| --------------------------------------|-----------------------|-----------------------------------------------------------|| --------------------------------------------------------------|-----------------------------------------------------------|
+|
+| **!invitetracker \<on\|off>**         | **/invitesimport**    | add existing guild invites to users                         |
+| **!invitecodes \[member]**            | **/invitecodes**      | list all your invites codes in this guild                   |
+| **!inviter \[member]**                | **/inviter**          | shows inviter information                                   |
+| **!inviteranks**                      | **/inviteranks**      | view invite ranks configured in the server                  |
+| **!inviterank add \<role> \<invites>**| **/inviterank add**   | add auto-rank after reaching a particular number of invites |
+| **!inviterank remove \<role>**        | **/inviterank remove**| remove invite rank configured with that role                |
+| **!invites \[member]**                | **/invites**          | view the number of invites of a member                      |
+| **!addinvites \<member> \<amount>**   | **/addinvites**       | add invites to a member                                     |
+| **!resetinvites \<member>**           | **/resetinvites**     | clear previously added invites                              |
+| **!invitesimport \[member]**          | **/invitesimport**    | add existing guild invites to users                         
+_____________________________________________________________________________________________________________________________
+---
+description: 23 commands
+---
+
+# 🔨 Moderation
+
+| Command                             | Slash                  | Description                                              |
+| ----------------------------------- | ---------------------- | -------------------------------------------------------- |
+| **!warnings list \[member]**        | **/warnings list**     | list all warnings for a user                             |
+| **!warnings clear \<member>**       | **/warnings clear**    | clear all warnings for a user                            |
+| **!warn \<member> \[reason]**       | **/warn**              | warns the specified member                               |
+| **!timout \<member> \[reason]**     | **/timout**            | timout the specified member                              |
+| **!untimout \<member> \[reason]**   | **/untimout**          | untimout the specified member                            |
+| **!kick \<member> \[reason]**       | **/kick**              | kicks the specified member                               |
+| **!softban \<member> \[reason]**    | **/softban**           | softban the specified member. Kicks and deletes messages |
+| **!ban \<member> \[reason]**        | **/ban**               | ban the specified member                                 |
+| **!unban \<member> \[reason]**      | **/unban**             | unban a banned user                                      |
+| **!nick set \<member>**             | **/nick set**          | change a members nickname                                |
+| **!nick reset \<member>**           | **/nick reset**        | reset a members nickname                                 |
+| **!purge \[amount]**                | **/purge all**         | purge all messages                                       |
+| **!purgeattach \[amount]**          | **/purge attachments** | purge all messages with attachments                      |
+| **!purgebots \[amount]**            | **/purge bots**        | purge all bot messages                                   |
+| **!purgelinks \[amount]**           | **/purge links**       | purge all messages with links                            |
+| **!purgetoken \<token> \[amount]**  | **/purge token**       | purge all messages containing the specified token        |
+| **!purgeuser \<user> \[amount]**    | **/purge user**        | purge all messages from the specified user               |
+| **!vmute \<member> \[amount]**      | **/voice mute**        | mute a member's voice                                    |
+| **!vunmute \<member> \[amount]**    | **/voice unmute**      | unmute a muted member's voice                            |
+| **!deafen \<member> \[reason]**     | **/voice deafen**      | deafen a member in voice channel                         |
+| **!undeafen \<member> \[reason]**   | **/voice undeafen**    | undeafen a deafened member in voice channel              |
+| **!move \<member> \[reason]**       | **/voice move**        | move a member from one voice channel to another          |
+| **!disconnect \<member> \[reason]** | **/voice kick**        | kick a member from voice channel                         |
+_____________________________________________________________________________________________________________________________
+---
+description: 13 commands
+---
+
+# 🎵 Music
+
+| Command                 | Slash          | Description                                                 |
+| ----------------------- | -------------- | ----------------------------------------------------------- |
+| **!bassboost \<level>** | **/bassboost** | set bassboost level                                         |
+| **!loop**               | **/loop**      | loops the song or queue                                     |
+| **!np**                 | **/np**        | show's what track is currently being played                 |
+| **!pause**              | **/pause**     | pause the current song                                      |
+| **!play \<song>**       | **/play**      | play a song from youtube                                    |
+| **!queue \[page]**      | **/queue**     | displays the current music queue                            |
+| **!resume**             | **/resume**    | resumes the paused song                                     |
+| **!search \<name>**     | **/search**    | search for matching songs on youtube                        |
+| **!seek \<pos>**        | **/seek**      | sets the playing track's position to the specified position |
+| **!shuffle**            | **/shuffle**   | shuffle the queue                                           |
+| **!skip**               | **/skip**      | skip the current song                                       |
+| **!stop**               | **/stop**      | stop the music player and clear the entire music queue      |
+| **!volume \<level>**    | **/volume**    | change or set the music player volume                       |
+_____________________________________________________________________________________________________________________________
+---
+description: 3 command
+---
+
+# 🔏 Owner
+
+| Command                      | Slash | Description                |
+| ---------------------------- | ----- | -------------------------- |
+| **!eval \<script>**          | NA    | evaluates something        |
+| **!leaveserver \<serverId>** | NA    | leave a server             |
+| **!listservers \[match]**    | NA    | lists all/matching servers |
+_____________________________________________________________________________________________________________________________
+---
+description: 2 commands
+---
+
+# 🧑 Social
+
+| Command                 | Slash                | Description                |
+| ----------------------- | -------------------- | -------------------------- |
+| **!rep view \[member]** | **/reputation view** | view reputation for a user |
+| **!rep give \[member]** | **/reputation give** | give reputation to a user  |
+_____________________________________________________________________________________________________________________________
+---
+description: 10 commands
+---
+
+# 🛠 Utility
+
+| Command                        | Slash          | Description                                   |
+| ------------------------------ | -------------- | --------------------------------------------- |
+| **!bigemoji \<emoji>**         | **/bigemoji**  | enlarge an emoji                              |
+| **!covid \<country>**          | **/covid**     | get covid statistics for a country            |
+| **!github \<username>**        | **/github**    | shows github statistics of a user             |
+| **!help \[cmd]**               | **/help**      | help menu                                     |
+| **!paste \<title> \<content>** | **/paste**     | paste something in sourceb.in                 |
+| **!pokedex \<pokemon>**        | **/pokedex**   | shows pokemon information                     |
+| **!proxies \<type>**           | **/proxies**   | fetch various proxies (http, socks4 & socks5) |
+| **!tr \<code> \<content>**     | **/translate** | translate from one language to other          |
+| **!urban \<word>**             | **/urban**     | searches the urban dictionary                 |
+| **!weather \<place>**          | **/weather**   | get weather information                       |
+_____________________________________________________________________________________________________________________________
+---
+description: 5 commands
+---
+
+# 📈 Statistics
+
+### Admin Configuration
+
+**Trackings**
+- **Description**: enable or disable tracking stats in the server
+- **Usage**: `!statstracking <on|off>`
+
+**Levelup Message**
+- **Description**: set custom level up message
+- **Usage**: `!levelup message <new-message>`
+
+**Levelup Channel**
+- **Description**: set the channel to send level up messages to
+- **Usage**: `!levelup channel <#channel>`
+
+### User Commands
+
+**Stats**
+- **Description**: get your stats
+- **Usage**: `!stats`
+
+**Rank**
+- **Description**: displays members rank in this server
+- **Usage**: `!rank`
+
