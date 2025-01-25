@@ -1,6 +1,6 @@
 module.exports = {
   OWNER_IDS: ["705135021371031563"], // Bot owner ID's
-  SUPPORT_SERVER: "1302647770217320478", // Your bot support server
+  SUPPORT_SERVER: "1316135510753808406", // Your bot support server
   PREFIX_COMMANDS: {
     ENABLED: true, // Enable/Disable prefix commands
     DEFAULT_PREFIX: "!", // Default prefix for the bot
@@ -44,7 +44,7 @@ module.exports = {
 
   ECONOMY: {
     ENABLED: true, // Enable economy system
-    CURRENCY: "❆",
+    CURRENCY: "🪙",
     DAILY_COINS: 100, // Coins for daily command
     MIN_BEG_AMOUNT: 100, // Minimum beg amount
     MAX_BEG_AMOUNT: 2500, // Maximum beg amount
@@ -104,7 +104,7 @@ module.exports = {
     ENABLED: true, // Enable bot presence
     STATUS: "idle", // Bot status [online, idle, dnd, invisible]
     TYPE: "WATCHING", // Presence type [PLAYING, LISTENING, WATCHING, COMPETING]
-    MESSAGE: "ПІШЛИ НАХУЙ.", // Status message
+    MESSAGE: "{members} members in {servers} servers", // Status message
   },
 
   STATS: {
